@@ -1,0 +1,18 @@
+Given an integer array arr[]. You need to find the maximum sum of a subarray.
+
+class Solution {
+  public:
+    // Function to find the sum of contiguous subarray with maximum sum.
+    int maxSubarraySum(vector<int> &arr) {
+        // code here...
+        int maxSum = INT_MIN; 
+        int currentSum = 0;   
+
+    for (int num : arr) {
+        currentSum = max(num, currentSum + num); 
+        maxSum = max(maxSum, currentSum);      
+    }
+
+    return maxSum;
+    }
+};
